@@ -1,0 +1,118 @@
+{
+  "name": "Task 1 - Basic Webhook to Email Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "63cc0008-c177-49a5-bedc-cf421ac6469e",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8e0c0610-ed8b-450d-b82c-ab90bde59caf",
+      "name": "Webhook",
+      "webhookId": "63cc0008-c177-49a5-bedc-cf421ac6469e"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "562538a8-4e75-4dba-9593-21a4ff275942",
+              "name": "name",
+              "value": "={{ $json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "f89656db-4b91-4217-a247-28ec6f850bdd",
+              "name": "email",
+              "value": "={{ $json.body.email }}",
+              "type": "string"
+            },
+            {
+              "id": "c2553861-7b99-42c9-ae58-ed7a45d58582",
+              "name": "message {{ $json.body.message",
+              "value": "=message {{ $json.body.message }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "5e3c54ec-55a5-4785-99df-0e99a259db31",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "fromEmail": "gamegrowth9@gmail.com",
+        "toEmail": "={{$json.email}}",
+        "subject": "New Contact Form Submission",
+        "html": "=Hello {{$json.name}},\n\nThank you for contacting us.\n\nWe received your message:\n\n{{$json.message}}\n\nWe will get back to you soon.\n\nRegards,\nYour Team",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        448,
+        0
+      ],
+      "id": "f737c872-ff66-437d-aa9f-3cecf21855fa",
+      "name": "Send an Email",
+      "webhookId": "1d38072e-6243-4807-93f1-e2c0a476aa91",
+      "credentials": {
+        "smtp": {
+          "id": "aBfT2FBtgTDPKy9C",
+          "name": "SMTP account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send an Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "22bbd91d-c326-4d20-ada1-fbb7c96c08f6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8b14326f0f64790b2f6bb099eb1487903bf13d8e9641baaca726cf5cf19620ab"
+  },
+  "nodeGroups": [],
+  "id": "mnpGcDQxpuTyRCbk",
+  "tags": []
+}
