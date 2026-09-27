@@ -17,6 +17,7 @@ The automation follows this flow:
 **Webhook → Edit Fields → Send an Email**
 
 ### 1. Webhook
+
 The workflow starts when a POST request is received through the n8n Webhook node.
 
 The incoming JSON contains information such as:
@@ -26,9 +27,11 @@ The incoming JSON contains information such as:
 - Message
 
 ### 2. Edit Fields
+
 The incoming data is processed and the required fields are prepared for the email step.
 
 ### 3. Send an Email
+
 The processed information is used to send an automated email response to the submitted email address.
 
 ## Technologies Used
@@ -44,16 +47,6 @@ The processed information is used to send an automated email response to the sub
 ```json
 {
   "name": "Maryam",
-  "email": "maryam992@gmail.com",
+  "email": "user@example.com",
   "message": "Hello"
 }
-## Screenshots
-
-### Workflow
-![n8n Workflow](workflow.png)
-
-### Form Submission
-![Form Submission Success](form-success.png)
-
-### Automated Email
-![Received Email](email-received.png)
