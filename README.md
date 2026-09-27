@@ -47,3 +47,13 @@ The processed information is used to send an automated email response to the sub
   "email": "maryam992@gmail.com",
   "message": "Hello"
 }
+## Screenshots
+
+### Workflow
+![n8n Workflow](workflow.png)
+
+### Form Submission
+![Form Submission Success](form-success.png)
+
+### Automated Email
+![Received Email](email-received.png)
