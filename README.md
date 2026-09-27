@@ -49,4 +49,56 @@ The processed information is used to send an automated email response to the sub
   "name": "Maryam",
   "email": "user@example.com",
   "message": "Hello"
-}
+}Example Result
+
+After receiving the webhook request, the workflow processes the submitted information and automatically sends an email response.
+
+Key Features
+Webhook-based automation
+JSON data processing
+Automated email response
+No manual processing required
+Simple and reusable workflow
+Built with n8n
+Testing
+
+The workflow was tested by sending a POST request containing form data to the n8n webhook.
+
+The test confirmed that:
+
+The webhook successfully received the request.
+The JSON data was processed correctly.
+The email was sent successfully.
+The automated email was received in the inbox.
+Screenshots
+Workflow
+
+Form Submission
+
+Automated Email
+
+Repository Contents
+workflow.json — Exported n8n workflow
+README.md — Project documentation
+Screenshots — Workflow and testing results
+Task
+
+This project was developed as part of the Barakah TechLabs AI & Workflow Automation internship.
+
+The implementation covers the requirements of the Basic Webhook to Email Automation task.
+
+Author
+
+Maryam Ansari
+
+
+### Paste karne ke baad
+
+Neeche **Commit changes** par click karo.
+
+Phir README ke **Preview** mein check karna hai ke:
+- headings properly show ho rahi hain
+- JSON ek box mein show ho raha hai
+- screenshots render ho rahe hain
+
+**Abhi sirf paste + commit karo.** Uske baad screenshot bhej dena, main check kar dungi.
